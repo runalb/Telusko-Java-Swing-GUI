@@ -9,7 +9,7 @@ public class Calc {
     }
 }
 
-class AddSub extends JFrame implements ActionListener {
+class AddSub extends JFrame {
     JTextField t1,t2;
     JButton b1,b2;
     JLabel l;
@@ -27,31 +27,39 @@ class AddSub extends JFrame implements ActionListener {
         t2 = new JTextField(10);
         add(t2);
 
+
         b1 = new JButton("Addition");
         add(b1);
-        b1.addActionListener(this);
+
+        // Using Annonymous Class
+        b1.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                int num1 = Integer.parseInt(t1.getText());
+                int num2 = Integer.parseInt(t2.getText());
+                int value = num1 + num2;
+                l.setText(""+value);
+            }
+        });
+
 
         b2 = new JButton("Substraction");
         add(b2);
-        b2.addActionListener(this);
+
+        // Using Annonymous Class
+        b2.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                int num1 = Integer.parseInt(t1.getText());
+                int num2 = Integer.parseInt(t2.getText());
+                int value = num1 - num2;
+                l.setText(""+value);
+            }
+        });
+
 
         l = new JLabel("Result");
         add(l);
-    }
-
-    @Override
-    public void actionPerformed(ActionEvent ae) {
-        int num1 = Integer.parseInt(t1.getText());
-        int num2 = Integer.parseInt(t2.getText());
-        int value = 0;
-
-        if (ae.getSource() == b1){
-            value = num1 + num2;
-        } else {
-            value = num1 - num2;
-        }
-
-        l.setText(""+value);
     }
 }
 
