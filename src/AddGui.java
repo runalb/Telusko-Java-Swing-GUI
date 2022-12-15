@@ -1,5 +1,7 @@
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 public class AddGui {
     public static void main (String args[]){
@@ -7,7 +9,8 @@ public class AddGui {
     }
 }
 
-class Addition extends JFrame{
+class Addition extends JFrame implements ActionListener {
+
     public Addition(){
         this.setLayout(new FlowLayout());
         this.setVisible(true);
@@ -21,11 +24,17 @@ class Addition extends JFrame{
         JTextField t2 = new JTextField(20);
         add(t2);
 
-        JButton b = new JButton("OK");
+        JButton b = new JButton("Addition");
+        b.addActionListener(this);
         add(b);
 
         JLabel l = new JLabel("Result");
         add(l);
+    }
+
+
+    public void actionPerformed(ActionEvent ae) {
+
     }
 }
 
