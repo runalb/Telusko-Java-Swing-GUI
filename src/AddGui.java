@@ -32,13 +32,12 @@ class Addition extends JFrame{
         b = new JButton("Addition");
         add(b);
 
-        b.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
+        // Lambda Expression
+        b.addActionListener(ae -> {
                 int num1 = Integer.parseInt(t1.getText());
                 int num2 = Integer.parseInt(t2.getText());
                 int value = num1 + num2;
                 l.setText(""+value);
-            }
         });
 
 
