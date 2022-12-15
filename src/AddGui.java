@@ -11,6 +11,10 @@ public class AddGui {
 
 class Addition extends JFrame implements ActionListener {
 
+    JTextField t1,t2;
+    JButton b;
+    JLabel l;
+
     public Addition(){
         this.setLayout(new FlowLayout());
         this.setVisible(true);
@@ -18,23 +22,26 @@ class Addition extends JFrame implements ActionListener {
         this.setTitle("My Frame");
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
-        JTextField t1 = new JTextField(20);
+        t1 = new JTextField(20);
         add(t1);
 
-        JTextField t2 = new JTextField(20);
+        t2 = new JTextField(20);
         add(t2);
 
-        JButton b = new JButton("Addition");
+        b = new JButton("Addition");
         b.addActionListener(this);
         add(b);
 
-        JLabel l = new JLabel("Result");
+        l = new JLabel("Result");
         add(l);
     }
 
 
     public void actionPerformed(ActionEvent ae) {
-
+        int num1 = Integer.parseInt(t1.getText());
+        int num2 = Integer.parseInt(t2.getText());
+        int value = num1 + num2;
+        l.setText(""+value);
     }
 }
 
