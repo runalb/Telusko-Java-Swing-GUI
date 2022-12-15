@@ -5,7 +5,6 @@ public class FirstGUI {
     public static void main(String args[]){
         Abc obj = new Abc();
     }
-
 }
 
 class Abc extends JFrame{
@@ -14,6 +13,7 @@ class Abc extends JFrame{
         this.setVisible(true);
         this.setSize(400,400);
         this.setTitle("My Frame");
+        this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
         JLabel l = new JLabel("Hello World");
         add(l);
