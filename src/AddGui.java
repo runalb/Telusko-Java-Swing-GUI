@@ -9,7 +9,7 @@ public class AddGui {
     }
 }
 
-class Addition extends JFrame implements ActionListener {
+class Addition extends JFrame{
 
     JTextField t1,t2;
     JButton b;
@@ -28,20 +28,22 @@ class Addition extends JFrame implements ActionListener {
         t2 = new JTextField(20);
         add(t2);
 
+        // Button
         b = new JButton("Addition");
-        b.addActionListener(this);
         add(b);
+
+        b.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                int num1 = Integer.parseInt(t1.getText());
+                int num2 = Integer.parseInt(t2.getText());
+                int value = num1 + num2;
+                l.setText(""+value);
+            }
+        });
+
 
         l = new JLabel("Result");
         add(l);
-    }
-
-
-    public void actionPerformed(ActionEvent ae) {
-        int num1 = Integer.parseInt(t1.getText());
-        int num2 = Integer.parseInt(t2.getText());
-        int value = num1 + num2;
-        l.setText(""+value);
     }
 }
 
