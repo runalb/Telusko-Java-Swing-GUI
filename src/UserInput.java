@@ -2,6 +2,8 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.ItemEvent;
+import java.awt.event.ItemListener;
 
 public class UserInput {
     public static void main(String[] args) {
@@ -63,6 +65,13 @@ class RadioDemo extends JFrame{
 
         cb1 = new JCheckBox("Dancing");
         add(cb1);
+
+        cb1.addItemListener(new ItemListener() {
+            @Override
+            public void itemStateChanged(ItemEvent e) {
+                System.out.println("Dancer");
+            }
+        });
 
         cb2 = new JCheckBox("Singing");
         add(cb2);
