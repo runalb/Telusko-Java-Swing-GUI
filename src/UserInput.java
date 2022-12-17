@@ -14,6 +14,7 @@ class RadioDemo extends JFrame{
     JButton b;
     JRadioButton r1,r2;
     JLabel l;
+    JCheckBox cb1,cb2;
 
     public RadioDemo(){
         this.setLayout(new FlowLayout());
@@ -47,9 +48,24 @@ class RadioDemo extends JFrame{
                 } else {
                     name = "Ms. "+name;
                 }
+
+                if (cb1.isSelected()){
+                    name = " Dancer";
+                }
+
+                if (cb2.isSelected()){
+                    name = " Singer";
+                }
                 l.setText(name);
             }
         });
+
+
+        cb1 = new JCheckBox("Dancing");
+        add(cb1);
+
+        cb2 = new JCheckBox("Singing");
+        add(cb2);
 
         l = new JLabel("Greeting");
         add(l);
