@@ -50,11 +50,11 @@ class RadioDemo extends JFrame{
                 }
 
                 if (cb1.isSelected()){
-                    name = " Dancer";
+                    name = name + " Dancer";
                 }
 
                 if (cb2.isSelected()){
-                    name = " Singer";
+                    name = name + " Singer";
                 }
                 l.setText(name);
             }
